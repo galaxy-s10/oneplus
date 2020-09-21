@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .relative {
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .relative2 {
+            width: 100%;
+            /* height: 100px; */
+            background-color: pink;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .sticky1 {
+            position: sticky;
+            top: 20px;
+        }
+
+        .sticky2 {
+            position: sticky;
+            top: 20px;
+        }
+
+        .tenvh {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative">
+        relative
+    </div>
+    <div class="relative2">
+        <div class="tenvh">
+            <div class="sticky1">
+                <img class="bigImg" src="./phone-black.png" width="50" alt="">
+            </div>
+        </div>
+        <div class="tenvh">
+            <div class="sticky2">
+                <img class="bigImg" src="./phone-blue.png" width="50" alt="">
+            </div>
+        </div>
+    </div>
+    <div style="height: 1200px;">
+        ffa
+    </div>
+</body>
+
+</html>

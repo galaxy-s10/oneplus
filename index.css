@@ -105,17 +105,17 @@
 }
 
 .main-wrapper .main .part2 {
-  z-index: 1;
+  z-index: 20;
   width: 100%;
-  height: 200vh;
-  position: relative;
-  overflow: hidden;
+  height: 120vh;
   background-color: #f9f9f9;
 }
 
 .main-wrapper .main .part2 .sticky {
   position: sticky;
-  top: 0px;
+  top: 50px;
+  height: 100vh;
+  overflow: hidden;
 }
 
 .main-wrapper .main .part2 .sticky .part2-left img {
@@ -128,18 +128,13 @@
   height: 20vw;
 }
 
-.main-wrapper .main .part2 .sticky .part2-right {
+.main-wrapper .main .part2 .sticky .part2-right img {
   position: absolute;
   top: 0;
   right: 0;
   width: 600px;
   height: 520px;
-  transform: translateX(115%) translateY(70%) scale(1.3);
-}
-
-.main-wrapper .main .part2 .sticky .part2-right img {
-  width: 100%;
-  height: 100%;
+  transform: translateX(115%) translateY(50%) scale(1.3);
 }
 
 .footer {

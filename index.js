@@ -85,24 +85,42 @@ function show() {
         black.style.height = '100%'
     }
     // part2动画
-    console.log();
-    // if (scrollHeight < part2) {
-    //     var part2LeftImg = document.querySelector('.part2-left-img');
-    //     part2LeftImg.style.transform = `translateY(-100%)`;
-    // }
-    // if ((scrollHeight > (part2 + 0)) && (scrollHeight < (part2 + 0 + 100))) {
-    // console.log(scrollHeight,part2);
-    console.log(part1OffsetHeight + 60);
+    // console.log(part1OffsetHeight + 60);
     if ((scrollHeight > part1OffsetHeight + 60)) {
         // if ((scrollHeight > (60 + part2 + 250 - 50)) && (scrollHeight < (60 + part2 + 250 - 50 + 100))) {
         // console.log('=======part2========');
         // console.log(scrollHeight - (part1OffsetHeight + 60));
         var part2LeftImg = document.querySelector('.part2-left-img');
-        console.log(part2LeftImg);
+        var part2RightImg = document.querySelector('.part2-right-img');
         var ratio2 = 100 - (scrollHeight - (part1OffsetHeight + 60));
-        console.log(ratio2);
-        part2LeftImg.style.transform = `translateY(calc(-${ratio2}% + 50px))`;
-        // part2LeftImg.style.transform = `translateY(calc(-${ratio2}% + 50px))`;
+        console.log('+++++++', ratio2);
+        console.log('+++++++', (ratio2 * 1.15));
+        part2LeftImg.style.transform = `translateY(-${ratio2}%)`;
+        var leftRatio = (ratio2 * 1.15) / 20;
+        if ((ratio2 * 1.15) > 20) {
+            // 当(ratio2 * 1.15)> 20，即translateX大于20%
+            console.log('?????');
+            part2RightImg.style.transform = `translateX(${ratio2 * 1.15}%) translateY(50%) scale(1.3)`;
+        }
+        if ((ratio2 * 1.15) < 20) {
+            console.log('=====', (ratio2 * 1.15));
+            console.log(leftRatio);
+            var leftRatio1 = ((ratio2 * 1.15) / 20) > 0 ? ((ratio2 * 1.15) / 20) : 0;
+            console.log('leftRatio1', leftRatio1);
+            var bottomRatio = 10 - (leftRatio.toFixed(4) * 10) + 50;
+            // 100% ===> 0% 逐渐递减
+            // 1.3变化到1，即要变化0.3，
+            var scaleRatio = 1 + (leftRatio * 0.3);
+            // var test1 = (((ratio2 * 1.3)/20).toFixed(4) *0.3);
+            console.log('pppp', scaleRatio);
+            // console.log('pppp',10 - test + 50);
+            console.log(`translateX(0%) translateY(${bottomRatio}%) scale(${scaleRatio})`);
+            if ((ratio2 * 1.15) > 0) {
+                part2RightImg.style.transform = `translateX(${leftRatio1}%) translateY(${bottomRatio}%) scale(${scaleRatio})`;
+            } else {
+                part2RightImg.style.transform = `translateX(${leftRatio1}%) translateY(60%) scale(1})`;
+            }
+        }
     } else {
         var part2LeftImg = document.querySelector('.part2-left-img');
         part2LeftImg.style.transform = `translateY(-100%)`;
